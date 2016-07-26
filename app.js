@@ -46,11 +46,14 @@ firstPike.renderLists = function() {
   for (var i = 0; i < openHours.length; i++) {
     //create a list element step3
     var liElCookiesAndCustomers = document.createElement('li');
-    //give the list element text content of a student's first name step4 put the content into the list element
-    liElCookiesAndCustomers.textContent = openHours[i] + this.projCookiesPerHour[i];
+    //give the list element text content, step4 put the content into the list element
+    liElCookiesAndCustomers.textContent = openHours[i] + ': ' + this.projCookiesPerHour[i] + ' cookies';
     //append the list element to the ol step5 att (list variable, ach the list elements to the <ol> that you grabbed in the first step (list variable,
     ulOfCookiesAndCustomers.appendChild(liElCookiesAndCustomers);
   }
+  var liElTotalDailyCookies = document.createElement('li');
+  liElCookiesAndCustomers.textContent = 'Total: ' + this.totalDailyCookies;
+  ulOfCookiesAndCustomers.appendChild(liElTotalDailyCookies);
 };
 
 
