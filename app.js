@@ -52,7 +52,7 @@ firstPike.renderLists = function() {
     ulOfCookiesAndCustomers.appendChild(liElCookiesAndCustomers);
   }
   var liElTotalDailyCookies = document.createElement('li');
-  liElCookiesAndCustomers.textContent = 'Total: ' + this.totalDailyCookies;
+  liElTotalDailyCookies.textContent = 'Total: ' + this.totalDailyCookies;
   ulOfCookiesAndCustomers.appendChild(liElTotalDailyCookies);
 };
 
