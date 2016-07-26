@@ -30,7 +30,7 @@ firstPike.calcCookiesPerHour = function() {
   for (var i = 0; i < this.randomCustHour.length; i++) {
     var singleHourCookies = Math.ceil(this.randomCustHour[i] * this.avgCookiesCustomer);
     this.projCookiesPerHour.push(singleHourCookies);
-    this.totalDailyCookies += singleHourCookies;
+    this.totalDailyCookies = Math.ceil(singleHourCookies * this.randomCustHour[0]);
   }
   console.log(this.projCookiesPerHour);
   console.log(this.totalDailyCookies);
@@ -58,9 +58,9 @@ firstPike.calcCookiesPerHour();
 var seatacAirport = {
   //PROPERTIES
   storeName: 'Seatac Airport',
-  minCustHour: 11,
-  maxCustHour: 38,
-  avgCookiesCustomer: 3.7,
+  minCustHour: 3,
+  maxCustHour: 24,
+  avgCookiesCustomer: 1.2,
   randomCustHour: [],
   projCookiesPerHour: [],
   totalDailyCookies: []
@@ -79,7 +79,7 @@ seatacAirport.calcCookiesPerHour = function() {
   for (var i = 0; i < this.randomCustHour.length; i++) {
     var singleHourCookies = Math.ceil(this.randomCustHour[i] * this.avgCookiesCustomer);
     this.projCookiesPerHour.push(singleHourCookies);
-    this.totalDailyCookies += singleHourCookies;
+    this.totalDailyCookies = Math.ceil(singleHourCookies * this.randomCustHour[0]);
   }
   console.log(this.projCookiesPerHour);
   console.log(this.totalDailyCookies);
@@ -129,7 +129,7 @@ seattleCenter.calcCookiesPerHour = function() {
   for (var i = 0; i < this.randomCustHour.length; i++) {
     var singleHourCookies = Math.ceil(this.randomCustHour[i] * this.avgCookiesCustomer);
     this.projCookiesPerHour.push(singleHourCookies);
-    this.totalDailyCookies += singleHourCookies;
+    this.totalDailyCookies = Math.ceil(singleHourCookies * this.randomCustHour[0]);
   }
   console.log(this.projCookiesPerHour);
   console.log(this.totalDailyCookies);
@@ -157,9 +157,9 @@ seattleCenter.calcCookiesPerHour();
 var capitalHill = {
   //PROPERTIES
   storeName: 'Seattle Center',
-  minCustHour: 11,
+  minCustHour: 20,
   maxCustHour: 38,
-  avgCookiesCustomer: 3.7,
+  avgCookiesCustomer: 2.3,
   randomCustHour: [],
   projCookiesPerHour: [],
   totalDailyCookies: []
@@ -178,7 +178,7 @@ capitalHill.calcCookiesPerHour = function() {
   for (var i = 0; i < this.randomCustHour.length; i++) {
     var singleHourCookies = Math.ceil(this.randomCustHour[i] * this.avgCookiesCustomer);
     this.projCookiesPerHour.push(singleHourCookies);
-    this.totalDailyCookies += singleHourCookies;
+    this.totalDailyCookies = Math.ceil(singleHourCookies * this.randomCustHour[0]);
   }
   console.log(this.projCookiesPerHour);
   console.log(this.totalDailyCookies);
@@ -207,9 +207,9 @@ capitalHill.calcCookiesPerHour();
 var alki = {
   //PROPERTIES
   storeName: 'Seattle Center',
-  minCustHour: 11,
-  maxCustHour: 38,
-  avgCookiesCustomer: 3.7,
+  minCustHour: 2,
+  maxCustHour: 16,
+  avgCookiesCustomer: 4.6,
   randomCustHour: [],
   projCookiesPerHour: [],
   totalDailyCookies: []
@@ -228,7 +228,8 @@ alki.calcCookiesPerHour = function() {
   for (var i = 0; i < this.randomCustHour.length; i++) {
     var singleHourCookies = Math.ceil(this.randomCustHour[i] * this.avgCookiesCustomer);
     this.projCookiesPerHour.push(singleHourCookies);
-    this.totalDailyCookies += singleHourCookies;
+    //trying a different daily total method here
+    this.totalDailyCookies = Math.ceil(this.totalDailyCookies) + Math.ceil(singleHourCookies);
   }
   console.log(this.projCookiesPerHour);
   console.log(this.totalDailyCookies);
