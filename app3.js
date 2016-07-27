@@ -79,14 +79,6 @@ var seattleCenter = new StoreSalesProjections(locationNames[2], 11, 38, 3.7); //
 var capitalHill = new StoreSalesProjections(locationNames[3], 20, 38, 2.3); //eslint-disable-line
 var alki = new StoreSalesProjections(locationNames[4], 2, 16, 4.6); //eslint-disable-line
 
-makeHeaderRow();
-firstPike.createSalesDataCells();
-seatacAirport.createSalesDataCells();
-seattleCenter.createSalesDataCells();
-capitalHill.createSalesDataCells();
-alki.createSalesDataCells();
-makeFooterRow();
-
 //STAND ALONE FUNCTION FOR HEADER ROW
 function makeHeaderRow () {
   var salesDataTable = document.getElementById('salesDataTable');
@@ -108,7 +100,7 @@ function makeHeaderRow () {
   salesDataTable.appendChild(salesDataRow);
 };
 
-// STAND-ALONE FUNCTION FOR FOOTER **STRETCH GOAL, not working on yet**
+// STAND-ALONE FUNCTION FOR FOOTER
 function makeFooterRow () {
   var salesDataTable = document.getElementById('salesDataTable');
 
@@ -127,3 +119,11 @@ function makeFooterRow () {
   salesFooterRow.appendChild(salesDataFooterTotal);
   salesDataTable.appendChild(salesFooterRow);
 };
+
+makeHeaderRow();
+firstPike.createSalesDataCells();
+seatacAirport.createSalesDataCells();
+seattleCenter.createSalesDataCells();
+capitalHill.createSalesDataCells();
+alki.createSalesDataCells();
+makeFooterRow();
