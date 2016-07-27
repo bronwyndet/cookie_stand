@@ -15,6 +15,7 @@ function StoreSalesProjections (storeName, minCustHour, maxCustHour, avgCookiesC
   this.randomCustHour = [];
   this.projCookiesPerHour = [];
   this.totalDailyCookies = 0;
+  this.totalHourlyCookies = 0;
 
 //METHOD to calculate random customers per hour
   this.calcRandomCustHour = function() {
@@ -84,7 +85,7 @@ seatacAirport.createSalesDataCells();
 seattleCenter.createSalesDataCells();
 capitalHill.createSalesDataCells();
 alki.createSalesDataCells();
-
+makeFooterRow();
 
 //STAND ALONE FUNCTION FOR HEADER ROW
 function makeHeaderRow () {
@@ -108,23 +109,21 @@ function makeHeaderRow () {
 };
 
 // STAND-ALONE FUNCTION FOR FOOTER **STRETCH GOAL, not working on yet**
-// function makeFooterRow () {
-//   var salesDataTable = document.getElementById('salesDataTable');
-//
-//   var salesDataRow = document.createElement('tr');
-//   var salesDataEmptyHeader = document.createElement('th');
-//   salesDataEmptyHeader.textContent = '';
-//   salesDataRow.appendChild(salesDataEmptyHeader);
-//
-//   for (var i = 0; i < openHours.length; i++) {
-//     var salesDataHeader = document.createElement('th');
-//     salesDataHeader.textContent = openHours[i];
-//     salesDataRow.appendChild(salesDataHeader);
-//   }
-//   var salesDataEmptyHeader = document.createElement('th');
-//   salesDataEmptyHeader.textContent = 'Daily Total';
-//   salesDataRow.appendChild(salesDataEmptyHeader);
-//   salesDataTable.appendChild(salesDataRow);
-// };
-//
-// makeFooterRow();
+function makeFooterRow () {
+  var salesDataTable = document.getElementById('salesDataTable');
+
+  var salesFooterRow = document.createElement('tr');
+  var salesDataEmptyFooter = document.createElement('td');
+  salesDataEmptyFooter.textContent = '';
+  salesFooterRow.appendChild(salesDataEmptyFooter);
+
+  for (var i = 0; i < openHours.length; i++) {
+    var salesDataFooter = document.createElement('td');
+    salesDataFooter.textContent = 'total';
+    salesFooterRow.appendChild(salesDataFooter);
+  }
+  var salesDataFooterTotal = document.createElement('td');
+  salesDataFooterTotal.textContent = 'TOTAL';
+  salesFooterRow.appendChild(salesDataFooterTotal);
+  salesDataTable.appendChild(salesFooterRow);
+};
