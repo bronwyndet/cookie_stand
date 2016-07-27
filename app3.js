@@ -1,10 +1,10 @@
 'use strict';
 
 var openHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
-var storeNames = ['First and Pike', 'Seatac Airport', 'Seattle Center', 'Capital Hill', 'Alki'];
+var locationNames = ['First and Pike', 'Seatac Airport', 'Seattle Center', 'Capital Hill', 'Alki'];
 
 //
-//CONSTRUCTOR FUNCTION for FIRST LOCATION - FIRST AND PIKE
+//CONSTRUCTOR FUNCTION
 //
 function StoreSalesProjections (storeName, minCustHour, maxCustHour, avgCookiesCustomer) {
   //PROPERTIES
@@ -72,11 +72,11 @@ function StoreSalesProjections (storeName, minCustHour, maxCustHour, avgCookiesC
   // this.renderLists();
 };
 
-var firstPike = new StoreSalesProjections(storeNames[0], 23, 65, 6.3); //eslint-disable-line
-var seatacAirport = new StoreSalesProjections(storeNames[1], 3, 24, 1.2); //eslint-disable-line
-var seattleCenter = new StoreSalesProjections(storeNames[2], 11, 38, 3.7); //eslint-disable-line
-var capitalHill = new StoreSalesProjections(storeNames[3], 20, 38, 2.3); //eslint-disable-line
-var alki = new StoreSalesProjections(storeNames[4], 2, 16, 4.6); //eslint-disable-line
+var firstPike = new StoreSalesProjections(locationNames[0], 23, 65, 6.3); //eslint-disable-line
+var seatacAirport = new StoreSalesProjections(locationNames[1], 3, 24, 1.2); //eslint-disable-line
+var seattleCenter = new StoreSalesProjections(locationNames[2], 11, 38, 3.7); //eslint-disable-line
+var capitalHill = new StoreSalesProjections(locationNames[3], 20, 38, 2.3); //eslint-disable-line
+var alki = new StoreSalesProjections(locationNames[4], 2, 16, 4.6); //eslint-disable-line
 
 makeHeaderRow();
 firstPike.createSalesDataCells();
@@ -86,7 +86,7 @@ capitalHill.createSalesDataCells();
 alki.createSalesDataCells();
 
 
-//MAKE THIS A STAND ALONE FUNCTION OUTSIDE OF THE CONSTRUCTOR TO MAKE HEADER ROW  --- NEEDS TO BE ADAPATED
+//STAND ALONE FUNCTION FOR HEADER ROW
 function makeHeaderRow () {
   var salesDataTable = document.getElementById('salesDataTable');
 
@@ -107,7 +107,7 @@ function makeHeaderRow () {
   salesDataTable.appendChild(salesDataRow);
 };
 
-// STAND-ALONE FUNCTION FOR FOOTER **still to be adapted**
+// STAND-ALONE FUNCTION FOR FOOTER **STRETCH GOAL, not working on yet**
 // function makeFooterRow () {
 //   var salesDataTable = document.getElementById('salesDataTable');
 //
