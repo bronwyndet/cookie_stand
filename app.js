@@ -14,7 +14,7 @@ function CreateNewStore (storeName, minCustHour, maxCustHour, avgCookiesCustomer
   this.randomCustHour = [];
   this.projCookiesPerHour = [];
   this.totalDailyCookies = 0;
-  // this.totalHourlyCookies = 0;  need for totals
+  this.totalHourlyCookies = 0;
   locationNames.push(this);
 
   this.calcRandomCustHour();
@@ -80,6 +80,11 @@ function makeHeaderRow () {
   salesDataTable.appendChild(salesDataRow);
 };
 
+
+
+
+
+
 // STAND-ALONE FUNCTION FOR FOOTER
 function makeFooterRow () {
   var salesDataTable = document.getElementById('salesDataTable');
@@ -89,16 +94,30 @@ function makeFooterRow () {
   salesDataEmptyFooter.textContent = '';
   salesFooterRow.appendChild(salesDataEmptyFooter);
 
+  var allStoresTotal = 0;
+
   for (var i = 0; i < openHours.length; i++) {
+    var calcEachHourTotalCookies = 0;
+
+    for (var n = 0; n < locationNames.length; n++) {
+      calcEachHourTotalCookies += locationNames[n].projCookiesPerHour[i];
+      allStoresTotal += locationNames[n].projCookiesPerHour[i];
+    }
     var salesDataFooter = document.createElement('td');
-    salesDataFooter.textContent = 'total';
+    salesDataFooter.textContent = calcEachHourTotalCookies;
     salesFooterRow.appendChild(salesDataFooter);
   }
+
   var salesDataFooterTotal = document.createElement('td');
-  salesDataFooterTotal.textContent = 'TOTAL';
+  salesDataFooterTotal.textContent = allStoresTotal;
   salesFooterRow.appendChild(salesDataFooterTotal);
   salesDataTable.appendChild(salesFooterRow);
+
 };
+
+
+
+
 
 function renderSalesDataCells () {
   for (var i = 0; i < locationNames.length; i++) {
