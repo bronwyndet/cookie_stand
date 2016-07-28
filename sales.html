@@ -5,14 +5,31 @@
     <title>Cookie Stand Sales Data</title>
   </head>
 
-
-
   <body>
-    <ul id="listCookiesAndCustPerHour"></ul>
+    <!-- <ul id="listCookiesAndCustPerHour"></ul> -->
 
-    <table id="salesDataTable"> </table>
+      <form id="salesProjectionForm">
+        <fieldset>
+          <legend>Sales Projection Input Form</legend>
+            <label for="storeLocation">Store Location</label>
+            <input name="storeLocation" type="text" size="20" />
 
-    <script src="app3.js"></script>
+            <label for="minCustHour">Minimum Customers</label>
+            <input name="minCustHour" type="number" />
 
+            <label for="maxCustHour">Maximum Customers</label>
+            <input name="maxCustHour" type="number" />
+
+            <label for="avgCookiesCustomer">Average Cookies Per Customer</label>
+            <input name="avgCookiesCustomer" type="number" />
+
+            <button type="submit">Submit</button>
+
+        </fieldset>
+      </form>
+
+      <table id="salesDataTable"> </table>
+
+    <script src="app4.js"></script>
   </body>
 </html>
