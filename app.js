@@ -23,6 +23,7 @@ firstPike.calcRandomCustHour = function() {
   for (var i = 0; i < openHours.length; i++) {
     this.randomCustHour.push(Math.floor(Math.random() * (this.maxCustHour - this.minCustHour + 1) + this.minCustHour));
   }
+  console.log('random customers per hour: ');
   console.log(this.randomCustHour);
 };
 
@@ -36,6 +37,25 @@ firstPike.calcCookiesPerHour = function() {
   console.log(this.projCookiesPerHour);
   console.log(this.totalDailyCookies);
 };
+
+// METHOD TO RENDER CUSTOMERS PER HOUR & COOKIES PER HOUR LISTS TO HTML
+firstPike.renderLists = function() {
+  //get a grip on the <ul> in the html  step1 (create var and use getElementById)
+  var ulOfCookiesAndCustomers = document.getElementById('listCookiesAndCustPerHour');
+  //iterating through the array requires a for loop step2 (for loop of the array you're printing)
+  for (var i = 0; i < openHours.length; i++) {
+    //create a list element step3
+    var liElCookiesAndCustomers = document.createElement('li');
+    //give the list element text content, step4 put the content into the list element
+    liElCookiesAndCustomers.textContent = openHours[i] + ': ' + this.projCookiesPerHour[i] + ' cookies';
+    //append the list element to the ol step5 att (list variable, ach the list elements to the <ol> that you grabbed in the first step (list variable,
+    ulOfCookiesAndCustomers.appendChild(liElCookiesAndCustomers);
+  }
+  var liElTotalDailyCookies = document.createElement('li');
+  liElTotalDailyCookies.textContent = 'Total: ' + this.totalDailyCookies;
+  ulOfCookiesAndCustomers.appendChild(liElTotalDailyCookies);
+};
+
 
 // //METHOD TO RENDER COOKIES PER HOUR TO HTML
 // firstPike.render = function() {
@@ -59,6 +79,7 @@ firstPike.calcCookiesPerHour = function() {
 
 firstPike.calcRandomCustHour();
 firstPike.calcCookiesPerHour();
+firstPike.renderLists();
 
 //
 //SECOND LOCATION - SEATAC AIRPORT
@@ -220,7 +241,7 @@ var alki = {
   avgCookiesCustomer: 4.6,
   randomCustHour: [],
   projCookiesPerHour: [],
-  totalDailyCookies: []
+  totalDailyCookies: 0,
 };
 
 //METHOD to calculate random customers per hour
@@ -237,24 +258,26 @@ alki.calcCookiesPerHour = function() {
     var singleHourCookies = Math.ceil(this.randomCustHour[i] * this.avgCookiesCustomer);
     this.projCookiesPerHour.push(singleHourCookies);
     //trying a different daily total method here
-    this.totalDailyCookies = Math.ceil(this.totalDailyCookies) + Math.ceil(singleHourCookies);
+    this.totalDailyCookies += singleHourCookies;
+    // CODE BELOWE\ WORKED FOR DAILY TOTAL COOKIES BUT WAS NOT THE SAME SOLUTION AS REST OF CLASS, SAVING HERE
+    // this.totalDailyCookies = Math.ceil(this.totalDailyCookies) + Math.ceil(singleHourCookies);
   }
   console.log(this.projCookiesPerHour);
   console.log(this.totalDailyCookies);
 };
 
-//METHOD TO RENDER COOKIES PER HOUR TO HTML
-alki.render = function() {
-  var cookiesHourList = document.createElement('ul');
-
-  for (var i = 0; i < this.projCookiesPerHour.length; i++) {
-    var listElCookiesPerHour = document.createElement('li');
-    listElCookiesPerHour.textContent = this.projCookiesPerHour[i];
-    cookiesHourList.appendChild(cookiesHourList);
-  }
-  this.calcCookiesPerHour();
-// code to e the list starts here
-};
+// //METHOD TO RENDER COOKIES PER HOUR TO HTML
+// alki.render = function() {
+//   var cookiesHourList = document.createElement('ul');
+//
+//   for (var i = 0; i < this.projCookiesPerHour.length; i++) {
+//     var listElCookiesPerHour = document.createElement('li');
+//     listElCookiesPerHour.textContent = this.projCookiesPerHour[i];
+//     cookiesHourList.appendChild(cookiesHourList);
+//   }
+//   this.calcCookiesPerHour();
+// // code to e the list starts here
+// };
 
 alki.calcRandomCustHour();
 alki.calcCookiesPerHour();
