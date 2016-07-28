@@ -134,10 +134,9 @@ function AddNewStore(event) {
     return alert('Must enter data in all fields');
   }
 
-  var newStore = [cookieStore, minCust, maxCust, avgCookies];
-
+  var newStore = new CreateNewStore(cookieStore, minCust, maxCust, avgCookies);
   console.log(newStore);
-  new CreateNewStore(newStore);
+  locationNames.push(newStore);
 
 };
 
