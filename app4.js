@@ -107,19 +107,11 @@ function renderSalesDataCells () {
   }
 };
 
-new CreateNewStore('First and Pike', 23, 65, 6.3); //eslint-disable-line
-new CreateNewStore('Seatac Airport', 3, 24, 1.2);
-new CreateNewStore('Seattle Center', 11, 38, 3.7);
-new CreateNewStore('Capital Hill', 20, 38, 2.3);
-new CreateNewStore('Alki', 2, 16, 4.6);
-
-
 var formSubmit = document.getElementById('salesProjectionForm');
-var formStoreName = document.getElementById('storeLocation');
-var formMinCustHour = document.getElementById('minCustHour');
-var formMaxCustHour = document.getElementById('maxCustHour');
-var formAvgCookies = document.getElementById('avgCookiesCustomer');
-
+// var formStoreName = document.getElementById('storeLocation');
+// var formMinCustHour = document.getElementById('minCustHour');
+// var formMaxCustHour = document.getElementById('maxCustHour');
+// var formAvgCookies = document.getElementById('avgCookiesCustomer');
 
 function AddNewStore(event) {
 
@@ -132,16 +124,30 @@ function AddNewStore(event) {
 
   if (!cookieStore || !minCust || !maxCust || !avgCookies) {
     return alert('Must enter data in all fields');
-  }
+  };
 
   var newStore = new CreateNewStore(cookieStore, minCust, maxCust, avgCookies);
   console.log(newStore);
   locationNames.push(newStore);
 
+  function renderAddedRows () {
+    for (var i = 0; i < locationNames.length; i++) {
+      locationNames[i].createSalesDataCells();
+    }
+  };
+
+  renderAddedRows();
+
 };
+
+formSubmit.addEventListener('submit', AddNewStore);
+
+new CreateNewStore('First and Pike', 23, 65, 6.3); //eslint-disable-line
+new CreateNewStore('Seatac Airport', 3, 24, 1.2);
+new CreateNewStore('Seattle Center', 11, 38, 3.7);
+new CreateNewStore('Capital Hill', 20, 38, 2.3);
+new CreateNewStore('Alki', 2, 16, 4.6);
 
 makeHeaderRow();
 renderSalesDataCells();
 makeFooterRow();
-
-formSubmit.addEventListener('submit', AddNewStore);
