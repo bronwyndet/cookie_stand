@@ -14,9 +14,8 @@ function CreateNewStore (storeName, minCustHour, maxCustHour, avgCookiesCustomer
   this.randomCustHour = [];
   this.projCookiesPerHour = [];
   this.totalDailyCookies = 0;
-  // this.totalHourlyCookies = 0;
+  // this.totalHourlyCookies = 0;  need for totals
   locationNames.push(this);
-  // this.renderLists();
 
   this.calcRandomCustHour();
   this.calcCookiesPerHour();
@@ -108,26 +107,21 @@ function renderSalesDataCells () {
 };
 
 var formSubmit = document.getElementById('salesProjectionForm');
-// var formStoreName = document.getElementById('storeLocation');
-// var formMinCustHour = document.getElementById('minCustHour');
-// var formMaxCustHour = document.getElementById('maxCustHour');
-// var formAvgCookies = document.getElementById('avgCookiesCustomer');
 
 function AddNewStore(event) {
 
   event.preventDefault();
 
   var cookieStore = event.target.storeLocation.value;
-  var minCust = event.target.minCustHour.value;
-  var maxCust = event.target.maxCustHour.value;
-  var avgCookies = event.target.avgCookiesCustomer.value;
+  var minCust = parseInt(event.target.minCustHour.value);
+  var maxCust = parseInt(event.target.maxCustHour.value);
+  var avgCookies = parseFloat(event.target.avgCookiesCustomer.value);
 
   if (!cookieStore || !minCust || !maxCust || !avgCookies) {
     return alert('Must enter data in all fields');
   };
 
-  var newStore = new CreateNewStore(cookieStore, minCust, maxCust, avgCookies);
-  console.log(newStore);
+  new CreateNewStore(cookieStore, minCust, maxCust, avgCookies);
 
   function renderAddedRows () {
     for (var i = 0; i < locationNames.length; i++) {
@@ -142,13 +136,13 @@ function AddNewStore(event) {
 
 };
 
-formSubmit.addEventListener('submit', AddNewStore);
-
 new CreateNewStore('First and Pike', 23, 65, 6.3); //eslint-disable-line
 new CreateNewStore('Seatac Airport', 3, 24, 1.2);
 new CreateNewStore('Seattle Center', 11, 38, 3.7);
 new CreateNewStore('Capital Hill', 20, 38, 2.3);
 new CreateNewStore('Alki', 2, 16, 4.6);
+
+formSubmit.addEventListener('submit', AddNewStore);
 
 makeHeaderRow();
 renderSalesDataCells();
