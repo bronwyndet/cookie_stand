@@ -86,7 +86,7 @@ function makeFooterRow () {
 
   var salesFooterRow = document.createElement('tr');
   var salesDataEmptyFooter = document.createElement('td');
-  salesDataEmptyFooter.textContent = '';
+  salesDataEmptyFooter.textContent = 'Hourly Total';
   salesFooterRow.appendChild(salesDataEmptyFooter);
 
   var allStoresTotal = 0;

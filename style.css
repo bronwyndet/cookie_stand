@@ -1,3 +1,124 @@
+body {
+  font-family: 'Amatic SC', cursive;
+  background-color: pink;
+}
+
 h1 {
-  font-family: 'Amatic', cursive;
+  font-size: 4em;
+  font-weight: bold;
+  text-align: center;
+  /*line-height: .75em;*/
+}
+
+h2 {
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+h3  {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+h5 {
+  font-size: 1.5em;
+}
+
+nav {
+  font-size: 1.5em;
+}
+
+table {
+  font-family: Arial, sans-serif;
+  /*background-color: #FFFFB2;*/
+  border: 1px solid blue;
+  border-collapse: collapse;
+  margin-bottom: 25px;
+  background-image: url(img/chinook.jpg);
+}
+
+header {
+  align-items: center;
+}
+
+tr {
+  font-weight: lighter;
+  font-size: .9em;
+  text-align: right;
+  border: 1px solid blue;
+}
+
+tr:nth-child(even) {
+  /*background-color: white;*/
+}
+
+tr:hover {
+  background-color: #CCCCCC;
+}
+
+td {
+  border: 1px solid blue;
+  padding: 15px;
+}
+
+ul {
+  font-size: 1.5em;
+}
+
+button[type=submit] {
+    background-color: #ffff99;
+    border: 2px solid blue;
+    color: blue;
+    text-decoration: none;
+}
+
+
+
+.salescontent {
+  height: 700px;
+}
+
+.formwrap {
+  background-color: white;
+  border: 2px, black;
+}
+
+.formlabel {
+  font-family: 'Arial', sans-serif;
+  font-size: .75em;
+}
+
+.legend {
+  font-size: 2em;
+  font-weight: 200;
+}
+
+.imagerow {
+  width: 200px;
+  display: inline;
+}
+
+.headimage {
+  width: 400;
+  margin: auto;
+}
+
+.divtable {
+}
+
+.locationhead {
+  font-size: 2em;
+  font-weight: bolder;
+  list-style-type: none;
+
+}
+
+.address {
+  font-size: .85em;
+  list-style-type: none;
+}
+
+#namecol {
+  font-weight: bold;
+  font-size: 1.5em;
 }

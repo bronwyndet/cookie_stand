@@ -3,36 +3,50 @@
 
   <head>
     <link href='https://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
-    <title>Cookie Stand Sales Data</title>
+    <title>Pat's Salmon Cookies: Sales Data</title>
     <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
 
-    <h1>Pat's Salmon Cookie Store</h1>
+    <header>
+      <h1>Pat's Salmon Cookies</h1>
+      <div class="headimage">
+        <img src="img/chinook.jpg" width=225px>
+      </div>
+      <nav>
+        <a href="index.html"><li id="currentpg" class="navbutton">Home</li></a>
+        <a href="merch.html"><li class="navbutton">Merchandise</li></a>
+        <a href="sales.html"><li class="navbutton">Sales Portal</li></a>
+      </nav>
+    </header>
 
-      <form id="salesProjectionForm">
-        <fieldset>
-          <legend>Sales Projection Input Form</legend>
-            <label for="storeLocation">Store Location</label>
-            <input name="storeLocation" type="text" size="20" />
+    <div class="salescontent">
+      <h3>Cookie Sales by Store / per Hour</h3>
+      <div class="divtable">
+        <table class="table" id="salesDataTable"> </table>
+      </div>
+        <form class="formwrap" accept-charset=""id="salesProjectionForm">
+          <fieldset class="formwrap">
+            <legend class="legend">Sales Projection Input Form</legend>
+              <label for="storeLocation" class="formlabel">Store Location</label>
+              <input name="storeLocation" type="text" size="20" />
 
-            <label for="minCustHour">Minimum Customers</label>
-            <input name="minCustHour" type="number" />
+              <label for="minCustHour" class="formlabel">Minimum Customers</label>
+              <input name="minCustHour" type="number" />
 
-            <label for="maxCustHour">Maximum Customers</label>
-            <input name="maxCustHour" type="number" />
+              <label for="maxCustHour" class="formlabel">Maximum Customers</label>
+              <input name="maxCustHour" type="number" />
 
-            <label for="avgCookiesCustomer">Average Cookies Per Customer</label>
-            <input name="avgCookiesCustomer" type="number" />
+              <label for="avgCookiesCustomer" class="formlabel">Average Cookies Per Customer</label>
+              <input name="avgCookiesCustomer" type="number" />
 
-            <button type="submit">Submit</button>
+              <button type="submit">Submit</button>
+          </fieldset>
+        </form>
+      </div>
 
-        </fieldset>
-      </form>
-
-      <table id="salesDataTable"> </table>
-
-    <script src="app.js"></script>
+  <script src="app.js"></script>
   </body>
+
 </html>
