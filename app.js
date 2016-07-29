@@ -80,7 +80,7 @@ function makeHeaderRow () {
   salesDataTable.appendChild(salesDataRow);
 };
 
-// STAND-ALONE FUNCTION FOR FOOTER
+// STAND-ALONE FUNCTION FOR FOOTER with hourly totals
 function makeFooterRow () {
   var salesDataTable = document.getElementById('salesDataTable');
 
