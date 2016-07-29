@@ -80,11 +80,6 @@ function makeHeaderRow () {
   salesDataTable.appendChild(salesDataRow);
 };
 
-
-
-
-
-
 // STAND-ALONE FUNCTION FOR FOOTER
 function makeFooterRow () {
   var salesDataTable = document.getElementById('salesDataTable');
@@ -115,10 +110,6 @@ function makeFooterRow () {
 
 };
 
-
-
-
-
 function renderSalesDataCells () {
   for (var i = 0; i < locationNames.length; i++) {
     locationNames[i].createSalesDataCells();
@@ -127,6 +118,7 @@ function renderSalesDataCells () {
 
 var formSubmit = document.getElementById('salesProjectionForm');
 
+// FUNCTION TO ADD NEW STORE FROM FORM DATA
 function AddNewStore(event) {
 
   event.preventDefault();
@@ -138,15 +130,36 @@ function AddNewStore(event) {
 
   if (!cookieStore || !minCust || !maxCust || !avgCookies) {
     return alert('Must enter data in all fields');
-  };
+  }
 
-  new CreateNewStore(cookieStore, minCust, maxCust, avgCookies);
+  var check = false;
+
+  for (var i = 0; i < locationNames.length; i++) {
+    if (cookieStore === locationNames[i].storeName) {
+      locationNames[i].storeName = cookieStore;
+      locationNames[i].minCustHour = minCust;
+      locationNames[i].maxCustHour = maxCust;
+      locationNames[i].avgCookiesCustomer = avgCookies;
+      locationNames[i].randomCustHour = [];
+      locationNames[i].projCookiesPerHour = [];
+      locationNames[i].totalDailyCookies = 0;
+      locationNames[i].totalHourlyCookies = 0;
+      locationNames[i].calcRandomCustHour();
+      locationNames[i].calcCookiesPerHour();
+      console.log(locationNames[i]);
+      check = true;
+    }
+  }
+
+  if (check === false ) {
+    new CreateNewStore(cookieStore, minCust, maxCust, avgCookies);
+  }
 
   function renderAddedRows () {
     for (var i = 0; i < locationNames.length; i++) {
       locationNames[i].createSalesDataCells();
     }
-  };
+  }
 
   salesDataTable.textContent = null;
   makeHeaderRow();
