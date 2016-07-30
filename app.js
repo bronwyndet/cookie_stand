@@ -136,7 +136,14 @@ function AddNewStore(event) {
 
   for (var i = 0; i < locationNames.length; i++) {
     if (cookieStore === locationNames[i].storeName) {
-      locationNames[i] = [cookieStore, minCust, maxCust, avgCookies, [], [], 0, 0];
+      locationNames[i].storeName = cookieStore;
+      locationNames[i].minCustHour = minCust;
+      locationNames[i].maxCustHour = maxCust;
+      locationNames[i].avgCookiesCustomer = avgCookies;
+      locationNames[i].randomCustHour = [];
+      locationNames[i].projCookiesPerHour = [];
+      locationNames[i].totalDailyCookies = 0;
+      locationNames[i].totalHourlyCookies = 0;
       locationNames[i].calcRandomCustHour();
       locationNames[i].calcCookiesPerHour();
       check = true;
