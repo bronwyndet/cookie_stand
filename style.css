@@ -1,13 +1,30 @@
 body {
   font-family: 'Amatic SC', cursive;
   background-color: pink;
+  margin-top: 150px;
+}
+
+header {
+  position: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: yellow;
+  background-position: center;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  box-shadow: 0px 5px 10px black;
+  height: 125px;
 }
 
 h1 {
   font-size: 4em;
   font-weight: bold;
   text-align: center;
-  /*line-height: .75em;*/
+  margin-top: 30px;
+  margin-bottom: 0px;
+  line-height: .5em;
+  padding-bottom: 0px;
 }
 
 h2 {
@@ -35,10 +52,6 @@ table {
   border-collapse: collapse;
   margin-bottom: 25px;
   /*background-image: url(img/chinook.jpg);*/
-}
-
-header {
-  align-items: center;
 }
 
 tr {
@@ -72,7 +85,21 @@ button[type=submit] {
     text-decoration: none;
 }
 
+.headimage {
+  border-radius: 50%;
+}
 
+.navigation {
+  display: inline;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 20px;
+}
+
+.leftheader {
+  position: relative;
+  margin-top: 20px;
+}
 
 .salescontent {
   height: 700px;
@@ -99,8 +126,9 @@ button[type=submit] {
 }
 
 .headimage {
-  width: 400;
-  margin: auto;
+  position: absolute;
+  margin-left: 250px;
+  margin-top: 10px;
 }
 
 .divtable {
@@ -113,6 +141,24 @@ button[type=submit] {
 
 }
 
+.navbutton {
+  display: inline-block;
+  float: left;
+  /*height: 60px;*/
+  width: 100px;
+  margin-right: 20px;
+
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  box-shadow: 3px 3px 10px black;
+
+  background-color: red;
+  color: white;
+  text-align: center;
+  font-size: .75em;
+  font-family: Arial, sans-serif;
+}
+
 .address {
   font-size: .85em;
   list-style-type: none;
@@ -121,4 +167,8 @@ button[type=submit] {
 #namecol {
   font-weight: bold;
   font-size: 1.5em;
+}
+
+#circleimage {
+  border-radius: 50%;
 }
