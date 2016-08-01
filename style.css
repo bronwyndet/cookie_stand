@@ -38,6 +38,16 @@ h2 {
 h3  {
   font-size: 2em;
   font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+h4  {
+  font-family: "Arial Narrow", sans-serif;
+  font-weight: normal;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 20px;
 }
 
 h5 {
@@ -93,6 +103,12 @@ button[type=submit] {
     text-decoration: none;
 }
 
+footer {
+  background-image: url("img/fish.jpg");
+  opacity: 70%;
+  /*margin: 0px;*/
+}
+
 .content {
   background: rgba(255, 217, 223, 0.85);
   padding-left: 20px;
@@ -111,6 +127,11 @@ button[type=submit] {
   margin-right: 20px;
 }
 
+.locationtext {
+  margin-bottom: 0px;
+}
+
+
 .leftheader {
   position: relative;
   margin-top: 30px;
@@ -119,6 +140,10 @@ button[type=submit] {
 
 .salescontent {
   height: 700px;
+  background: rgba(255, 217, 223, 0.85);
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
 }
 
 .formwrap {
@@ -171,16 +196,14 @@ button[type=submit] {
 }
 
 .locationhead {
-  font-size: 2em;
+  font-size: 1.75em;
   font-weight: bolder;
   list-style-type: none;
-
 }
 
 .navbutton {
   display: inline-block;
   float: left;
-  /*height: 60px;*/
   width: 100px;
   margin-right: 20px;
 
@@ -196,8 +219,15 @@ button[type=submit] {
 }
 
 .address {
-  font-size: .85em;
-  list-style-type: none;
+  font-family: 'Arial Narrow', sans-serif;
+  font-size: .5em;
+  font-weight: lighter;
+  margin: 0px;
+}
+
+.floataddress {
+  width: 200px;
+  float: left;
 }
 
 #namecol {
