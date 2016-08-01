@@ -10,22 +10,23 @@
   <body>
 
     <header>
-      <h1>Pat's Salmon Cookies</h1>
       <div class="headimage">
-        <img src="img/chinook.jpg" width=225px>
+        <img src="img/chinook.jpg" width="200px" id="circleimage" alt="Pat's Salmon Cookies Logo of a chinook salmon.">
       </div>
-      <nav>
-        <a href="index.html"><li id="currentpg" class="navbutton">Home</li></a>
-        <a href="merch.html"><li class="navbutton">Merchandise</li></a>
-        <a href="sales.html"><li class="navbutton">Sales Portal</li></a>
-      </nav>
+      <h1>Pat's Salmon Cookies</h1>
+        <div class="leftheader">
+          <a href="index.html"><li id="currentpg" class="navbutton">Home</li></a>
+          <a href="merch.html"><li class="navbutton">Merchandise</li></a>
+          <a href="sales.html"><li class="navbutton">Sales Portal</li></a>
+        </div>
     </header>
 
     <div class="salescontent">
-      <h3>Cookie Sales by Store / per Hour</h3>
+      <h2>Cookie Sales by Store / per Hour</h2>
       <div class="divtable">
         <table class="table" id="salesDataTable"> </table>
       </div>
+        <p>Add new stores with sales projections below. To adjust projected sales for existing stores, enter the name of the relevant store and the new projection numbers. Table will update automatically.
         <form class="formwrap" accept-charset=""id="salesProjectionForm">
           <fieldset class="formwrap">
             <legend class="legend">Sales Projection Input Form</legend>

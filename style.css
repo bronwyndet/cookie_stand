@@ -2,6 +2,8 @@ body {
   font-family: 'Amatic SC', cursive;
   background-color: pink;
   margin-top: 150px;
+  margin-left: 20px;
+  background-image: url("img/salmon.png");
 }
 
 header {
@@ -22,7 +24,7 @@ h1 {
   font-weight: bold;
   text-align: center;
   margin-top: 30px;
-  margin-bottom: 0px;
+  margin-bottom: 40px;
   line-height: .5em;
   padding-bottom: 0px;
 }
@@ -30,6 +32,7 @@ h1 {
 h2 {
   font-size: 2.5em;
   font-weight: bold;
+  margin-bottom: 20px;
 }
 
 h3  {
@@ -39,6 +42,12 @@ h3  {
 
 h5 {
   font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+p {
+  font-family: 'Arial Narrow', sans-serif;
+  font-size: 1.1em;
 }
 
 nav {
@@ -47,11 +56,10 @@ nav {
 
 table {
   font-family: Arial, sans-serif;
-  /*background-color: #FFFFB2;*/
+  background-color: #FFFFB2;
   border: 1px solid blue;
   border-collapse: collapse;
   margin-bottom: 25px;
-  /*background-image: url(img/chinook.jpg);*/
 }
 
 tr {
@@ -62,7 +70,7 @@ tr {
 }
 
 tr:nth-child(even) {
-  /*background-color: white;*/
+  background-color: white;
 }
 
 tr:hover {
@@ -85,6 +93,13 @@ button[type=submit] {
     text-decoration: none;
 }
 
+.content {
+  background: rgba(255, 217, 223, 0.85);
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+}
+
 .headimage {
   border-radius: 50%;
 }
@@ -98,7 +113,8 @@ button[type=submit] {
 
 .leftheader {
   position: relative;
-  margin-top: 20px;
+  margin-top: 30px;
+  margin-left: 20px;
 }
 
 .salescontent {
@@ -121,14 +137,34 @@ button[type=submit] {
 }
 
 .imagerow {
-  width: 200px;
+  height: 100px;
   display: inline;
+}
+
+.imgfloatleft {
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  width: 300px;
+}
+
+.imgfloatright {
+  float: right;
+  margin-left: 20px;
+  margin-right: 40px;
+  margin-bottom: 30px;
+  width: 300px;
+}
+
+.clearfloat {
+  clear: left;
 }
 
 .headimage {
   position: absolute;
   margin-left: 250px;
   margin-top: 10px;
+  margin-bottom: 50px;
 }
 
 .divtable {
